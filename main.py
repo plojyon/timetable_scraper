@@ -7,6 +7,12 @@ import os
 
 app = Flask(__name__);
 
+try {
+	port = int(os.getenv("PORT"));
+}
+except {print("bruh")} # bruh moment
+if not port: port = 5000;
+
 production = os.getenv("DEBUG") == '0';
 if not production:
 	print("Running in debug mode. Do not deploy in this state.");
@@ -103,4 +109,4 @@ def err404(e):
 		return json.dumps([{"error": "404"}]);
 
 if __name__ == '__main__':
-	app.run();
+	app.run(port=PORT);
