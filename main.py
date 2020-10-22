@@ -7,8 +7,7 @@ import os
 
 app = Flask(__name__);
 
-# negate check so that the default (if it's null) becomes True
-production = os.getenv("DEBUG") != '0';
+production = os.getenv("DEBUG") == '0';
 if not production:
 	print("Running in debug mode. Do not deploy in this state.");
 
