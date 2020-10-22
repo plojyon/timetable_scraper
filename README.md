@@ -24,7 +24,7 @@ Return value format:
         "abbr": "LINALG",
         "location": "FMF",
         "name": "Linearna algebra"
-    }
+    },
     "profesor": "Jakob Cimpri\u010d",
     "tip": "P", // "P" -predavanja, "LV" -lab. vaje
     "trajanje": 2, // in hours
