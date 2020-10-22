@@ -94,7 +94,7 @@ def get_fri():
 
 		ucilnica = entry.find(class_='link-classroom').text;
 
-		results.append({"predmet": predmeti[predmet], "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
+		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
 @app.route('/getFmfUrnik', methods=['GET'])
