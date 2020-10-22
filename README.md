@@ -11,6 +11,10 @@ Endpoints:
 * /getFmfUrnik - returns only the FMF part of the timetable
 * /getFriUrnik - returns only the FRI part of the timetable
 
+Parameters:
+* letnik_fri (def. 43889) - letnik code for urnik.fri (defaults to ISRM)
+* letnik_fmf (def. 42) - letnik code for urnik.fmf (defaults to ISRM)
+
 Return value format:
 ```
 [
@@ -30,3 +34,7 @@ Return value format:
   ...
 ]
 ```
+
+Example request:
+```GET https://fmf-fri-timetable-scraper.herokuapp.com/getUrnik?letnik_fmf=43930&letnik_fri=45```
+```GET https://fmf-fri-timetable-scraper.herokuapp.com/getFriUrnik?letnik_fri=43930```
