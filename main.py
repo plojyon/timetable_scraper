@@ -7,10 +7,10 @@ import os
 
 app = Flask(__name__);
 
-try {
+try:
 	PORT = int(os.getenv("PORT"));
-}
-except {print("bruh")} # bruh moment
+except:
+	PORT = 5000; # bruh moment
 if not PORT: PORT = 5000;
 print("Using port "+str(PORT));
 
