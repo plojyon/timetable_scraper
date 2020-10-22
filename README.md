@@ -1,10 +1,9 @@
 # timetable_scraper
-A timetable scraper that combines timetables from FMF and FRI
+A timetable scraper API that combines timetables from FMF and FRI
 
-
-Environment variables:
-* PORT (def. 5000) port on which to listen
-* DEBUG (def. 1) is app in debug mode? Set to 0 for production
+API available at [https://fmf-fri-timetable-scraper.herokuapp.com/](https://fmf-fri-timetable-scraper.herokuapp.com/)  
+Front-end hosted with Github pages at [https://jakic12.github.io/fri-fmf-timetable](https://jakic12.github.io/fri-fmf-timetable)  
+[Front-end source code](https://github.com/jakic12/fri-fmf-timetable)  
 
 Endpoints:
 * /getUrnik - returns the entire timetable
@@ -43,3 +42,7 @@ Return value format:
 Example request:  
 ```GET https://fmf-fri-timetable-scraper.herokuapp.com/getUrnik?letnik_fmf=43930&letnik_fri=45```  
 ```GET https://fmf-fri-timetable-scraper.herokuapp.com/getFriUrnik?letnik_fri=43930```  
+
+Environment variables:
+* PORT (def. 5000) port on which to listen
+* DEBUG (def. 1) is app in debug mode? Set to 0 for production
