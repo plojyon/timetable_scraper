@@ -27,6 +27,44 @@ dayIndex = {
 	# weekends don't exist in urnik.fri
 }
 
+predmeti = {
+	"ODV_LV": {
+		"name": "Osnove digitalnih vezij",
+		"abbr": "ODV",
+		"location": "FRI"
+	},
+	"ODV_P": {
+		"name": "Osnove digitalnih vezij",
+		"abbr": "ODV",
+		"location": "FRI"
+	},
+	"P1_LV": {
+		"name": "Programiranje 1",
+		"abbr": "P1",
+		"location": "FRI"
+	},
+	"P1_P": {
+		"name": "Programiranje 1",
+		"abbr": "P1",
+		"location": "FRI"
+	},
+	"Analiza 1": {
+		"name": "Analiza 1",
+		"abbr": "A1",
+		"location": "FMF"
+	},
+	"Diskretne strukture 1": {
+		"name": "Diskretne strukture 1",
+		"abbr": "DS1",
+		"location": "FMF"
+	},
+	"Linearna algebra": {
+		"name": "Linearna algebra",
+		"abbr": "LINALG",
+		"location": "FMF"
+	}
+}
+
 @app.route('/getFriUrnik', methods=['GET'])
 def get_fri():
 	letnik = request.args.get('letnik_fri', default=43889, type=int);
@@ -56,7 +94,7 @@ def get_fri():
 
 		ucilnica = entry.find(class_='link-classroom').text;
 
-		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
+		results.append({"predmet": predmeti[predmet], "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
 @app.route('/getFmfUrnik', methods=['GET'])
