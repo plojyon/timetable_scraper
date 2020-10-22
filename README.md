@@ -35,6 +35,6 @@ Return value format:
 ]
 ```
 
-Example request:
-```GET https://fmf-fri-timetable-scraper.herokuapp.com/getUrnik?letnik_fmf=43930&letnik_fri=45```
-```GET https://fmf-fri-timetable-scraper.herokuapp.com/getFriUrnik?letnik_fri=43930```
+Example request:  
+```GET https://fmf-fri-timetable-scraper.herokuapp.com/getUrnik?letnik_fmf=43930&letnik_fri=45```  
+```GET https://fmf-fri-timetable-scraper.herokuapp.com/getFriUrnik?letnik_fri=43930```  
