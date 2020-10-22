@@ -20,7 +20,11 @@ Return value format:
 [
   {
     "dan": 0, // 0-4 Monday to Friday
-    "predmet": "Linearna algebra",
+    "predmet": {
+        "abbr": "LINALG",
+        "location": "FMF",
+        "name": "Linearna algebra"
+    }
     "profesor": "Jakob Cimpri\u010d",
     "tip": "P", // "P" -predavanja, "LV" -lab. vaje
     "trajanje": 2, // in hours

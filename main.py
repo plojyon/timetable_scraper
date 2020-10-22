@@ -62,6 +62,11 @@ predmeti = {
 		"name": "Linearna algebra",
 		"abbr": "LINALG",
 		"location": "FMF"
+	},
+	"Kolokviji 1": {
+		"name": "Kolokviji 1",
+		"abbr": "K1",
+		"location": "FMF"
 	}
 }
 
@@ -94,7 +99,11 @@ def get_fri():
 
 		ucilnica = entry.find(class_='link-classroom').text;
 
-		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
+		if predmet in predmeti:
+			p = predmeti[predmet];
+		else:
+			p = {"name": predmet, "abbr": predmet, "location": "FRI"};
+		results.append({"predmet": p, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
 @app.route('/getFmfUrnik', methods=['GET'])
@@ -126,7 +135,11 @@ def get_fmf():
 		ucilnica = entry.find(class_='ucilnica').find('a');
 		ucilnica = ucilnica['title'] if ucilnica else "";
 
-		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
+		if predmet in predmeti:
+			p = predmeti[predmet];
+		else:
+			p = {"name": predmet, "abbr": predmet, "location": "FMF"};
+		results.append({"predmet": p, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
 @app.route('/getUrnik', methods=['GET'])
