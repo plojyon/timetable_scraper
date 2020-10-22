@@ -5,7 +5,10 @@ from flask import Flask, json, request
 import re
 import os
 
-production = not bool(int(os.environ.get('DEBUG', "1")));
+app = Flask(__name__);
+
+# negate check so that the default (if it's null) becomes True
+production = os.getenv("DEBUG") != '0';
 if not production:
 	print("Running in debug mode. Do not deploy in this state.");
 
@@ -18,10 +21,7 @@ dayIndex = {
 	# weekends don't exist in urnik.fri
 }
 
-api = Flask(__name__);
-
-
-@api.route('/getFriUrnik', methods=['GET'])
+@app.route('/getFriUrnik', methods=['GET'])
 def get_fri():
 	letnik = request.args.get('letnik_fri', default=43889, type=int);
 	URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2020_2021-zimski-drugi-teden/allocations?group='+str(letnik);
@@ -53,7 +53,7 @@ def get_fri():
 		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
-@api.route('/getFmfUrnik', methods=['GET'])
+@app.route('/getFmfUrnik', methods=['GET'])
 def get_fmf():
 	letnik = request.args.get('letnik_fmf', default=42, type=int);
 	URL = 'https://urnik.fmf.uni-lj.si/letnik/'+str(letnik);
@@ -85,18 +85,18 @@ def get_fmf():
 		results.append({"predmet": predmet, "profesor": profesor, "ucilnica": ucilnica, "tip": tip, "dan": dan, "ura":ura, "trajanje": trajanje});
 	return json.dumps(results);
 
-@api.route('/getUrnik', methods=['GET'])
+@app.route('/getUrnik', methods=['GET'])
 def get_both():
 	return json.dumps(json.loads(get_fmf()) + json.loads(get_fri()));
 
-@api.errorhandler(500)
+@app.errorhandler(500)
 def err500(e):
 	if (not production):
 		return json.dumps([{"error": "500", "e": e}]);
 	else:
 		return json.dumps([{"error": "500"}]);
 
-@api.errorhandler(404)
+@app.errorhandler(404)
 def err404(e):
 	if (not production):
 		return json.dumps([{"error": "404", "e": e}]);
@@ -104,4 +104,4 @@ def err404(e):
 		return json.dumps([{"error": "404"}]);
 
 if __name__ == '__main__':
-	api.run();
+	app.run();
