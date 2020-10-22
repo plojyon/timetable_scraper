@@ -74,7 +74,7 @@ predmeti = {
 def get_fri():
 	letnik = request.args.get('letnik_fri', default=43889, type=int);
 	subject = request.args.get('subject_fri', default=0, type=int);
-	if group == 0:
+	if subject == 0:
 		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2020_2021-zimski-drugi-teden/allocations?group='+str(letnik);
 	else:
 		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2020_2021-zimski-drugi-teden/allocations?subject='+str(subject);
