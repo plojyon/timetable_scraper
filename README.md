@@ -14,6 +14,7 @@ Endpoints:
 Parameters:
 * letnik_fri (def. 43889) - letnik code for urnik.fri (defaults to ISRM)
 * letnik_fmf (def. 42) - letnik code for urnik.fmf (defaults to ISRM)
+* subject_fri (def. 0) - if set, it will ignore letnik_fri and search with subject id
 
 Return value format:
 ```
