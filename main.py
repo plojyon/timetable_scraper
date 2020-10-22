@@ -8,10 +8,11 @@ import os
 app = Flask(__name__);
 
 try {
-	port = int(os.getenv("PORT"));
+	PORT = int(os.getenv("PORT"));
 }
 except {print("bruh")} # bruh moment
-if not port: port = 5000;
+if not PORT: PORT = 5000;
+print("Using port "+str(PORT));
 
 production = os.getenv("DEBUG") == '0';
 if not production:
