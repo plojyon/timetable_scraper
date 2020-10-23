@@ -2,10 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 from pprint import pprint
 from flask import Flask, json, request
+from flask_cors import CORS
 import re
 import os
 
 app = Flask(__name__);
+CORS(app);
 
 try:
 	PORT = int(os.getenv("PORT"));
