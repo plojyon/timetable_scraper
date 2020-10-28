@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from pprint import pprint
 from flask import Flask, json, request
 from flask_cors import CORS
+import json
 import re
 import os
 
@@ -19,6 +20,13 @@ print("Using port "+str(PORT));
 production = os.getenv("DEBUG") == '0';
 if not production:
 	print("Running in debug mode. Do not deploy in this state.");
+
+TIMETABLE = "failed to load";
+try:
+	with open('timetable.json') as json_file:
+		TIMETABLE = json.load(json_file);
+except:
+	print("Failed to load timetable json.");
 
 dayIndex = {
 	"MON": 0,
@@ -71,6 +79,10 @@ predmeti = {
 		"location": "FMF"
 	}
 }
+
+@app.route('/', methods=['GET'])
+def get_cache():
+	return TIMETABLE;
 
 @app.route('/getFriUrnik', methods=['GET'])
 def get_fri():
