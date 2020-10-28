@@ -82,7 +82,7 @@ predmeti = {
 
 @app.route('/', methods=['GET'])
 def get_cache():
-	return TIMETABLE;
+	return json.dumps(TIMETABLE);
 
 @app.route('/getFriUrnik', methods=['GET'])
 def get_fri():
