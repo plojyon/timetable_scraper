@@ -36,7 +36,18 @@ dayIndex = {
 	"FRI": 4
 	# weekends don't exist in urnik.fri
 }
-
+'''
+for (i in urnik) {
+  if (urnik[i].predmet.abbr == "ODV") urnik[i].link = "MS Teams"
+  if (urnik[i].predmet.abbr == "P1" && urnik[i].tip == "P") urnik[i].link = "https://uni-lj-si.zoom.us/j/7311330543?pwd=ZnBZZnpyU2pNSUF1dFIwOTlxblg2Zz09"
+  if (urnik[i].predmet.abbr == "P1" && urnik[i].tip == "LV") urnik[i].link = "MS Teams"
+  if (urnik[i].predmet.abbr == "A1") urnik[i].link = "Can't help you there"
+  if (urnik[i].predmet.abbr == "DS1" && urnik[i].tip == "P") urnik[i].link = "Meeting ID: 930 9176 9572\nPasscode: 177089"
+  if (urnik[i].predmet.abbr == "DS1" && urnik[i].tip == "V") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91779033051?pwd=dWdRV2JJanNOM0ZWUFBoTVlObDJ6Zz09"
+  if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "P") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91456042157?pwd=d1YrK3NWYzIzQ2h3WEpPb2hBZFRudz09"
+  if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "V") urnik[i].link = "https://uni-lj-si.zoom.us/j/99794927001?pwd=VGY0dHdlY0xIVWNKYndPemEzR2FWUT09"
+}
+'''
 predmeti = {
 	"ODV_LV": {
 		"name": "Osnove digitalnih vezij",
