@@ -38,10 +38,11 @@ dayIndex = {
 }
 '''
 for (i in urnik) {
-  if (urnik[i].predmet.abbr == "ODV") urnik[i].link = "MS Teams"
+  if (urnik[i].predmet.abbr == "ODV" && urnik[i].tip == "P") urnik[i].link = "https://teams.microsoft.com/l/channel/19%3abfaa863595024fcc91959ddf16e89030%40thread.tacv2/General?groupId=c76ad578-7a69-4b47-bd06-07521f0ab47d&tenantId=a6cc90df-f580-49dc-903f-87af5a75338e"
+  if (urnik[i].predmet.abbr == "ODV" && urnik[i].tip == "LV") urnik[i].link = "https://teams.microsoft.com/l/channel/19%3a946e2e041f794f19bfb77efd9d773acd%40thread.tacv2/Laboratorijske%2520vaje?groupId=c76ad578-7a69-4b47-bd06-07521f0ab47d&tenantId=a6cc90df-f580-49dc-903f-87af5a75338e"
   if (urnik[i].predmet.abbr == "P1" && urnik[i].tip == "P") urnik[i].link = "https://uni-lj-si.zoom.us/j/7311330543?pwd=ZnBZZnpyU2pNSUF1dFIwOTlxblg2Zz09"
-  if (urnik[i].predmet.abbr == "P1" && urnik[i].tip == "LV") urnik[i].link = "MS Teams"
-  if (urnik[i].predmet.abbr == "A1") urnik[i].link = "Can't help you there"
+  if (urnik[i].predmet.abbr == "P1" && urnik[i].tip == "LV") urnik[i].link = "https://teams.microsoft.com/l/channel/19%3a82a5038cac3b4e46a2059c40d2ee8843%40thread.tacv2/General?groupId=d308da2b-c295-4e5d-9ec3-141b7f5516d8&tenantId=a6cc90df-f580-49dc-903f-87af5a75338e"
+  if (urnik[i].predmet.abbr == "A1") urnik[i].link = "Ni linka :("
   if (urnik[i].predmet.abbr == "DS1" && urnik[i].tip == "P") urnik[i].link = "https://uni-lj-si.zoom.us/j/93091769572?pwd=RlhwRzNWVDlWT3A0L2d5NXo0MmNFZz09"
   if (urnik[i].predmet.abbr == "DS1" && urnik[i].tip == "V") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91779033051?pwd=dWdRV2JJanNOM0ZWUFBoTVlObDJ6Zz09"
   if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "P") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91456042157?pwd=d1YrK3NWYzIzQ2h3WEpPb2hBZFRudz09"
