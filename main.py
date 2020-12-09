@@ -53,42 +53,50 @@ predmeti = {
 	"ODV_LV": {
 		"name": "Osnove digitalnih vezij",
 		"abbr": "ODV",
-		"location": "FRI"
+		"location": "FRI",
+		"color": "green"
 	},
 	"ODV_P": {
 		"name": "Osnove digitalnih vezij",
 		"abbr": "ODV",
-		"location": "FRI"
+		"location": "FRI",
+		"color": "green"
 	},
 	"P1_LV": {
 		"name": "Programiranje 1",
 		"abbr": "P1",
-		"location": "FRI"
+		"location": "FRI",
+		"color": "blue"
 	},
 	"P1_P": {
 		"name": "Programiranje 1",
 		"abbr": "P1",
-		"location": "FRI"
+		"location": "FRI",
+		"color": "blue"
 	},
 	"Analiza 1": {
 		"name": "Analiza 1",
 		"abbr": "A1",
-		"location": "FMF"
+		"location": "FMF",
+		"color": "orange"
 	},
 	"Diskretne strukture 1": {
 		"name": "Diskretne strukture 1",
 		"abbr": "DS1",
-		"location": "FMF"
+		"location": "FMF",
+		"color": "yellow"
 	},
 	"Linearna algebra": {
 		"name": "Linearna algebra",
 		"abbr": "LINALG",
-		"location": "FMF"
+		"location": "FMF",
+		"color": "red"
 	},
 	"Kolokviji 1": {
 		"name": "Kolokviji 1",
 		"abbr": "K1",
-		"location": "FMF"
+		"location": "FMF",
+		"color": "black"
 	}
 }
 
