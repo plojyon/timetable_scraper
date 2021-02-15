@@ -48,6 +48,15 @@ for (i in urnik) {
   if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "P") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91456042157?pwd=d1YrK3NWYzIzQ2h3WEpPb2hBZFRudz09"
   if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "V") urnik[i].link = "https://uni-lj-si.zoom.us/j/99794927001?pwd=VGY0dHdlY0xIVWNKYndPemEzR2FWUT09"
 }
+
+2. semester
+for (i in urnik) {
+  if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "P") urnik[i].link = "https://fmf-uni-lj-si.zoom.us/j/91456042157?pwd=d1YrK3NWYzIzQ2h3WEpPb2hBZFRudz09"
+  if (urnik[i].predmet.abbr == "LINALG" && urnik[i].tip == "V") urnik[i].link = "https://uni-lj-si.zoom.us/j/99794927001?pwd=VGY0dHdlY0xIVWNKYndPemEzR2FWUT09"
+  if (urnik[i].predmet.abbr == "DS2" && urnik[i].tip == "V") urnik[i].link = "https://uni-lj-si.zoom.us/j/93273156085?pwd=M1phUVlMeEd3OTFPSlBhZkRGNDlJdz09"
+  if (urnik[i].predmet.abbr == "DS2" && urnik[i].tip == "P") urnik[i].link = "https://uni-lj-si.zoom.us/j/94616241161?pwd=S2FJT3dmbDVOMzNkS3NOa1RwbUNyQT09"
+  if (urnik[i].predmet.abbr == "P2" && urnik[i].tip == "LV") urnik[i].link = "https://teams.microsoft.com/l/channel/19%3a1c769b77d6994d83bfcd88a577852fe7%40thread.tacv2/General?groupId=fb0a47b2-d93d-4b80-aecd-ea617da5b323&tenantId=a6cc90df-f580-49dc-903f-87af5a75338e"
+}
 '''
 predmeti = {
 	"ODV_LV": {
