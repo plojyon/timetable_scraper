@@ -97,9 +97,9 @@ def get_fri():
 	letnik = request.args.get('letnik_fri', default=43889, type=int);
 	subject = request.args.get('subject_fri', default=0, type=int);
 	if subject == 0:
-		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2020_2021-zimski-drugi-teden/allocations?group='+str(letnik);
+		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2021_2022-letni-1-1/allocations?group='+str(letnik);
 	else:
-		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2020_2021-zimski-drugi-teden/allocations?subject='+str(subject);
+		URL = 'https://urnik.fri.uni-lj.si/timetable/fri-2021_2022-letni-1-1/allocations?subject='+str(subject);
 	page = requests.get(URL);
 	soup = BeautifulSoup(page.content, 'html.parser');
 
